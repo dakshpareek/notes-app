@@ -1,0 +1,20 @@
+@import './variables.css';
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+h1 {
+    color: var(--color-primary);
+}
+
+button {
+    font-family: inherit;
+}
+
+button:focus {
+    outline: none;
+}

@@ -1,0 +1,14 @@
+/* src/styles/variables.css */
+:root {
+    --color-background: #fdfdfd;
+    --color-primary: #4d3e56;
+    --color-accent: #ffcc00;
+    /* Lunar Yellow */
+    --color-muted: #888888;
+    --color-text: #333333;
+    --color-text-light: #ffffff;
+
+    --color-success: #5cb85c;
+    --color-info: #5bc0de;
+    --color-danger: #d9534f;
+}
