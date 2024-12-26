@@ -1,31 +1,33 @@
-name: Deploy to GitHub Pages
-
+name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this if your default branch is not main
-
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Install pnpm
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8.6.3
 
-      # Install dependencies
-      - name: Install dependencies
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.10.0'
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install Dependencies
         run: pnpm install
 
-      # Build the app
-      - name: Build the app
+      - name: Build React App
         run: pnpm run build
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
